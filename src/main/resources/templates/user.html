@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User-form</title>
+</head>
+<body>
+
+<div class="form-cont">
+    <form method="POST" th:action="@{/user}" th:object="${user}">
+        <h2>Calculator</h2>
+        <label>Enter Name : <input type="text" placeholder="Enter Customer ID" th:field="*{userName}">
+            <span class="error" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span></label>
+        <br>
+        <label>Enter Email : <input type="email" placeholder="Enter Email" th:field="*{email}">
+            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </label>
+        <br>
+        <label>Enter Password : <input type="text" placeholder="Enter Customer Name" th:field="*{password}">
+            <span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span></label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
