@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <!--    <link rel="stylesheet" href="@{/static/css/style.css}">-->
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        }
+        .form-cont{
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        margin-top:5rem;
+        }
+        form {
+        height:80%;
+        width:50%;
+        gap:1rem;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        background-color:beige;
+        justify-content:center;
+        }
+    </style>
+</head>
+<body>
+<div class="form-cont">
+    <form method="POST" th:action="@{/calculator}">
+        <h2>Customer Form</h2>
+        <label>Enter Customer ID : <input type="text" placeholder="Enter Customer ID"> </label>
+        <br>
+        <label>Enter Customer Name : <input type="text" placeholder="Enter Customer Name"> </label>
+        <br>
+        <button value="Submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

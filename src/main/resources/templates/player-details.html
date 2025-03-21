@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Details</title>
+<!--    <link rel="stylesheet" href="@{/css/style.css}">-->
+    <style>
+        *{
+             margin:0;
+             padding:0;
+         }
+         .main-cont {
+             width:100vw;
+             height:100vh;
+             display:flex;
+             gap:2rem;
+             align-items:center;
+             justify-content:center;
+         }
+         .details-cont {
+                 width:50%;
+                 height:50%;
+                 display:flex;
+                 flex-direction:column;
+                 align-items:center;
+                 justify-content:center;
+                 top-margin:10rem;
+                 gap:1rem;
+                 background-color:black;
+                 color:white;
+                 border-radius:2rem;
+         }
+         .btn-cont{
+                 background-color:white;
+                 color:white;
+                 height:20%;
+                 width:40%;
+                 display:flex;
+                 align-items:center;
+                 justify-content:space-around;
+         }
+         .btn {
+             border-radius:4px;
+             color:white;
+             background-color:blue;
+             height:30px;
+             align-text:center;
+             width:30px;
+         }
+         .btn:hover {
+             background:gray;
+         }
+    </style>
+</head>
+<body>
+<div class="main-cont">
+    <h2 th:text="${message}"></h2>
+    <div class="details-cont">
+        <h2><p th:text="${player.name}"></p> Details</h2>
+        <label> Jersey Number : <strong th:text="${player.jerseyNumber}"></strong> </label>
+        <br>
+        <div class="btn-cont">
+            <a th:href="@{/player/stats/{id}(id=${player.id},format='Odi')}" class="btn">Odi</a>
+            <a th:href="@{/player/stats/{id}(id=${player.id},format='t20')}" class="btn">t20</a>
+            <a th:href="@{/player/stats/{id}(id=${player.id},format='test')}" class="btn">test</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
